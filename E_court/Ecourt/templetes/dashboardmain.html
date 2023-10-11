@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Add more styling as needed */
+</style>
+    <title>E-Court System</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to E-Court</h1>
+    </header>
+
+    <section id="admin-login">
+        <h2>Admin Login</h2>
+        <form action="admin_login.php" method="post">
+            <label for="admin-username">Username:</label>
+            <input type="text" id="admin-username" name="admin-username" required>
+
+            <label for="admin-password">Password:</label>
+            <input type="password" id="admin-password" name="admin-password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="client-login">
+        <h2>Client Login</h2>
+        <form action="client_login.php" method="post">
+            <label for="client-username">Username:</label>
+            <input type="text" id="client-username" name="client-username" required>
+
+            <label for="client-password">Password:</label>
+            <input type="password" id="client-password" name="client-password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 E-Court System</p>
+    </footer>
+</body>
+</html>
