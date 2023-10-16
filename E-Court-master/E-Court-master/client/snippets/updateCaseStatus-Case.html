@@ -1,0 +1,87 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/updateCaseStatusStyle.css">
+</head>
+
+<div class="container">
+  <h1>Case Status</h1>
+  <form action="adminPanel.html" method="post">
+    <div class="form my-auto">
+      <h2>Details of Case</h2>
+      <div class="form-row">
+        <div class="col">
+          <label for="complaint">Complaint:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <textarea required class="complaint" rows="5" cols="30"></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="doc">Date of Complaint:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="date" class="form-control dateOfComplaint" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="codes">Codes:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control codes" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="status">Status:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="radio" value="Ongoing" name="status" id="Ongoing"> <label>Ongoing</label><br>
+          <input type="radio" value="Closed" name="status" id="Closed"> <label>Closed</label><br>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="lastCourt">Last Court of Hearing:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control lastCourtOfHearing" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="nextCourt">Next Court of Hearing:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control nextCourtOfHearing" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="lastDate">Last Date of Hearing:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="date" class="form-control lastDateOfHearing" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="nextDate">Next Date of Hearing:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="date" class="form-control nextDateOfHearing" required>
+        </div>
+      </div>
+
+    </div>
+    <div>
+      <center><button type="submit" onclick="$admin.registerUpdateCase();" class="btn btn-success submit">Submit</button>
+      </center>
+    </div>
+  </form>
+</div>

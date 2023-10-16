@@ -1,0 +1,258 @@
+* ) Create New Project in Pycharm 
+		File> New Project >
+
+1 ) to Install Django 
+		'pip install django'			- Package consist of django, tzdata, sqlphrase, 
+
+
+2 ) Create Django Project - 
+		'django-admin startproject Project_Name'		
+		
+		
+3 ) Changed the directory - 
+		'cd Project_Name'
+
+
+4 ) Lets check running the project    
+		'python manage.py runserver'				- 127.0.0.1:8000
+
+
+5 ) Will add the migrations to database ( Connect Django with Database ) 
+		'python manage.py makemigrations'      	- Check the activity of database 
+		'python manage.py migrate'           	- add the migrations to database 
+	
+	
+6) Create SuperAdmin :
+		'python manage.py createsuperuser'				
+			Username : admin
+			Email :
+			Password : same
+			Password(again) : same 
+
+7 ) create app inside Project
+		'django-admin startapp APP_NAME'
+		
+		
+8 ) the application created should be added inside Installed applications in 	settings.py 
+			INSTALLED_APPS = [
+				'django.contrib.admin',
+				'django.contrib.auth',
+				'django.contrib.contenttypes',
+				'django.contrib.sessions',
+				'django.contrib.messages',
+				'django.contrib.staticfiles',
+				'aaps.social',
+			]
+			
+9)	change the name of app in apps.py of newely created app 
+			class SocialConfig(AppConfig):
+				default_auto_field = 'django.db.models.BigAutoField'
+				name = 'apps.social'
+				
+10)	we have to create urls.py file in newly created app (social)
+
+11) now we need to include urls.py file from  newly create app (social) into projects main urls.py file as below 
+
+		from django.contrib import admin
+		from django.urls import path, include
+
+		urlpatterns = [
+			path('admin/', admin.site.urls),
+			path('', include('apps.social.urls'))
+		]
+		
+11 ) Create a templates directory inside newly created app   (social)
+
+
+12 ) inside templates we can create multiple html files and access it using functions of views.py
+
+
+
+*) MVT 
+	Models <-> Views <-> Templates
+	
+	aim : Show the html page on url 
+	*) create a html page inside templates of newly create application (social)
+			ex. home.html
+			
+	a) create function for that html page in views.py 
+			ex. 	def home(request):
+						return render(request, 'home.html')
+					
+	b) add a path inside 'list of urlspatterns' of newly created urls.py (social/urls.py) 
+			ex. 	    path('home/', views.home)
+			
+
+
+*) How to load a static file into HTML page 
+	a) open settings.py add the following code
+		import os
+		STATICFILES_DIRS = (
+			os.path.join(BASE_DIR, 'static'),
+		)
+	b) create a folder inside your main directory as 'static'
+		- Django_project
+			- Django_project
+			- django_app
+			- manage.py 
+			- static ( create a new file )
+				- img
+					- bank.png
+	
+	c) we need to add the following code inside html page to make use static files 
+			{% load static %}
+			
+	d) to use image from static file 
+			need to add the path in following format 
+			( src= "{% static 'img/bank1.png' %}" )
+			
+			
+	e) for make use of urls in href we need to write urls in following format
+			( href="{% url 'home' %}" )
+
+
+									%%%%% Problem Statement %%%%%
+	
+	*  TA Social Media Web-Application for college students 
+	
+	1) Authentication System 
+		- Login a User
+		- Register a User 
+		
+	2) Types of User - Student & Staff 
+	3) Profile for each user
+	4) CRUD operations on data of User 
+	5) CRUD operations on Content/Posts of Students 
+	6) There can be multiple departments in college 
+	7) students  - name of student , College name, Department, year of admission, year of passout, personal details, docuements, 
+	8) Teacher - name of teacher , college name, Department, Subject, personal details, and documents, 
+	9) college - name of college, established, college code, address, no of teachers, no of students, no of departments, 
+	10) Posts - title, photo, date, descriptions , comments, likes, share, edit, delete, save 
+	11) Jobs - title, name comapany, job descriptions, end date, CRUD 
+	12) Searching 
+	13) add Posts 
+	14) profile for college 
+	15) REST API... 
+	
+
+Templates - Profile(student, teacher, college), Home, Login(student, staff), Registration, Jobs, add posts, edit post, profile edit, searching page
+
+
+
+
+	
+
+# CRUD
+# Create a Entry in DB
+# Read the Entries from DB
+# Update the Entries from DB
+# Delete the Entries from DB
+
+
+# Create a Entry :
+		*- create a HTML Page and write a form into it with mentioned database fields 
+		*- write a function for opening that html page 
+		*- add path for above function into urls.py 
+		*- write a function for getting data from front end and storing into database 
+		*- add path for above function into urls.py 
+		
+		while creating Form -
+			- write a url of the function which stored the data in database inside action as below-  
+			- add method = post inside form tag 
+			- after form tag add a csrf_token as below 
+			- all input tags should have name attribute and that should be unique and we need to match it with backend.
+			- a submit button containing type='submit'
+			
+				<form action="{% url 'store_student' %}" method="post">
+					{% csrf_token %}
+					
+					<-- Write all input tags and labels here -->
+					
+					<button type='submit'> Submit <button/>
+					
+		Now storing data - 
+			- need to create a object for class of database table which is inside models and before that we need import it in views.py 
+			- by using that object need to assign values which are coming from front end to the attributes inside that class 
+			- so to get data from front end we use the following format, 
+				BUT inside get function we write the similar unique name which is assigned to input fields 
+				- request.POST.get('name')
+
+			- after assigning data from frontend to attributes of class now we need to store that into it 
+				we use save() method to store {s.save()}
+			
+			- we are going to redirect after storing data.... 
+			
+			for reference :
+			
+					def store_student(request):
+						s = Student()
+						s.name_student = request.POST.get('student_name')
+						s.name_college = request.POST.get('clg_name')
+						s.department = request.POST.get('department')
+						s.year_pass = request.POST.get('year')
+						s.mobile = request.POST.get('mobile')
+						s.save()
+						return redirect('index')
+
+
+# Read the Entries from DB
+		
+		*- create a HTML Page for showing the data 
+		*- write a function for opening that html page 
+		*- add path for above function into urls.py 
+		*- to get all the data from DB will write a varible and in that call the data from class of models.py
+			
+			synatax:
+				variable = NAME_CLASS_MODELS.objects.all() 	# this will get all the data from perticular class 
+															name and store into variable
+			ex: 												
+				show = Student.objects.all()					
+															
+															
+		*- now to send the data to html we need to use render function where will pass the 3rd parameter as context ( context should be in the form of dictionary )
+			return render(request, 'student_details.html', {'show': show})
+			
+		*- By using Jinja Templating we can access the varible which we are passing as third parameter
+		
+		
+		
+# Update the Entries from DB
+		*- create a HTML Page for showing the edit form 
+		*- write a function for opening that html page with perticular id as pk
+		*- add path for above function into urls.py  with perticular id as pk
+		*- to get all the data from DB will get a object for perticular id { .objects.get(id=value)}
+		ex: 
+			def edit_student(request, pk):
+				show = Student.objects.get(id=pk)
+				return render(request, 'edit_details.html', {'data': show})
+						
+		*- to show on HTML.. 
+			use that data key in input field by passing pericular field to respective input field 
+				use below attribute in input
+					value = "{{ data.field }}"
+
+		*- create a function to update a data for perticular id as pk
+			refere below to get id from url which is pk and passing as paramater and going to it inside student objects as below and we will get student details of perticular id, 
+		
+		ex:
+			def edit_details(request, pk):
+				s = Student.objects.get(id=pk)
+				..... ( all the fields )
+				s.save()
+				return redirect('student_details')
+				
+		*- now to modify data we will use data from front end and assign to respective fields and save()
+		
+			
+# Delete the Entries from DB
+		*- write a function for deleting with perticular id as pk
+		*- add path for above function into urls.py  with perticular id as pk
+		*- will call a object while passing perticular id into it and delete the object as below 
+		
+		ex: 
+			def delete_student(request,pk):
+				s = Student.objects.get(id=pk)
+				s.delete()
+				return redirect('student_details')
+
+

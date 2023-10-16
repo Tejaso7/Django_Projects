@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<section class="ftco-section">
+    <div class="container">
+		<br>
+		<br>
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-4">
+                <div class="wrap d-md-flex">
+                    <div class="login-wrap p-md-5 border" >
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Register Now</h3>
+                            </div>
+
+                        </div>
+                        <form action="#" class="signin-form" method="post">
+                            {% csrf_token %}
+                            <div class="form-group mb-3">
+                                <label class="label" for="name">Username</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password">Password</label>
+                                {{ form.password1 }}
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password">Repeate Password</label>
+                                {{ form.password2 }}
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password">Type of User</label>
+                                {{ form.type_user }}
+                            </div>
+                            
+                            <span class="text-error">{{ form.errors }}</span>
+
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign Up
+                                </button>
+                            </div>
+
+                        </form>
+                        <p class="text-center">If a member? <a data-toggle="tab" href="{% url 'login_view' %}" >Sign In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
+

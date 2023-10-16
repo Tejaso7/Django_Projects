@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Chapter</th>
+      <th>Section</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Additional Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% laws.forEach(function(item) { %>
+    <tr>
+      <td><%= item.chapter %></td>
+      <td><%= item.section %></td>
+      <td><%= item.title %></td>
+      <td><%= item.description %></td>
+      <% if (item.additionalInfo == undefined) { %>
+      <td>-</td>
+      <% } else { %>
+      <td><%= item.additionalInfo %></td>
+      <% } %>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

@@ -1,0 +1,78 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/updateCaseStatusStyle.css">
+</head>
+
+<div class="container">
+  <h1>Case Status</h1>
+  <form action="adminPanel.html" method="POST">
+    <div class="form my-auto">
+      <h2>Details of Appelant</h2>
+      <div class="form-row">
+        <div class="col">
+          <label for="firstName">First Name:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control firstName" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="middleName">Middle Name:</label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control middleName">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="lastName">Last Name:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control lastName" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="address">Address:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <textarea required rows="5" cols="30" class="address"></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="lawyerName">Appelant Username:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control username" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="lawyerName">Lawyer Username:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" onchange="$admin.getLawyerId();" class="form-control lawyerUsername" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="lawyerID">Lawyer ID:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control lawyerId" required>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div>
+      <center><button type="submit" onclick="$admin.addCaseStatusDefendant();"
+          class="btn btn-success submit">Next</button></center>
+    </div>
+  </form>
+
+</div>

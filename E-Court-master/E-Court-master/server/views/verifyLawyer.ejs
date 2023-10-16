@@ -1,0 +1,40 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Sr No</th>
+      <th>FullName</th>
+      <th>Email</th>
+      <th>Speciality</th>
+      <th>State</th>
+      <th>Pic</th>
+      <th>Certificate</th>
+      <th>Reject</th>
+      <th>Approve</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% lawyers.forEach(function(lawyer) { %>
+    <tr>
+      <td><%= lawyers.indexOf(lawyer) + 1 %></td>
+      <td><%= lawyer.fullname %></td>
+      <td><%= lawyer.username %></td>
+      <td>
+        <% lawyer.speciality.forEach(function(item) { %>
+        <p><%= item %></p>
+        <% }) %>
+
+      </td>
+      <td><%= lawyer.state %></td>
+      <td><button class="btn btn-success btn-sm" onclick="$admin.viewPic('<%= lawyer.photoUrl %>');">View Pic</button>
+      </td>
+      <td><button class="btn btn-success btn-sm" onclick="$admin.viewCertificate('<%= lawyer.degreePhotoUrl %>');">View
+          Certificate</button></td>
+      <td><button class="btn btn-danger btn-md" onclick="$admin.rejectApplication('<%= lawyer._id %>');">Reject</button>
+      </td>
+      <td><button class="btn btn-primary btn-md"
+          onclick="$admin.acceptApplication('<%= lawyer._id %>');">Approve</button></td>
+    </tr>
+    <% }) %>
+
+  </tbody>
+</table>

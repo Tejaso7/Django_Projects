@@ -1,0 +1,47 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/userdashboard.css">
+</head>
+
+<div class="container-fluid row no-gutters">
+  <div class="col-12 col-md-3">
+    <!-- Sidebar Starts -->
+    <div id="sidebar">
+      <div id="sidebar-header">
+        <p><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;User Dashboard</p>
+      </div>
+      <div class="sidebar-item">
+        <a href="#" onclick="$ec.loadHomePage();" id="sidebar-item-link"><i class="fa fa-home"
+            aria-hidden="true"></i>&nbsp;Home</a><br><br>
+        <a href="#" onclick="$ec.loadContactPage();" id="sidebar-item-link"><i class="fa fa-phone"
+            aria-hidden="true"></i>&nbsp;Contact Us</a><br><br>
+        <a href="#" onclick="$ec.caseStatus();" id="sidebar-item-link"><i class="fa fa-tasks"
+            aria-hidden="true"></i>&nbsp;Case Status</a><br><br>
+        <a href="#" onclick="$ec.approvedBylawyer();" id="sidebar-item-link"><i class="fa fa-check-square"
+            aria-hidden="true"></i>&nbsp;Approved Cases By Lawyer</a><br><br>
+        <a href="#" onclick="$ec.allApprovedCasesByLawyerAndUser();" id="sidebar-item-link"><i
+            class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;All Approved Cases</a><br><br>
+        <a href="#" onclick="$ec.privacyPolicy();" id="sidebar-item-link"><i class="fa fa-lock"
+            aria-hidden="true"></i>&nbsp;Privacy Policy</a><br><br>
+      </div>
+    </div>
+    <!-- Sidebar Ends -->
+  </div>
+  <!-- End of Left Side -->
+  <!--Right Side Start-->
+  <div class="col-12 col-md-9 float-right">
+    <!-- Top Nav of User -->
+    <nav class="top-nav ml-2">
+      <a href="#" id="samplenav"><i class="fa fa-search" aria-hidden="true"></i></a>&nbsp;
+      <a href="#" id="samplenav"> <i class="fa fa-bell" aria-hidden="true"></i></a>&nbsp;
+      <a href="#" id="samplenav"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+
+    </nav>
+    <!-- End Of Top Nav -->
+    <!-- Main Content starts -->
+    <!--  First Row -->
+    <div id="user-dashboard-content">
+
+    </div>
+    <!-- Second Row Ends -->
+  </div>

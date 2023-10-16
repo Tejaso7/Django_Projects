@@ -1,0 +1,71 @@
+.form {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding: 20px;
+	/*background-color: #58FAF4*/
+	border: 5px solid white;
+	color: white;
+}
+.form-left h2 {
+	color: #2271dd;
+}
+
+.form-left label{
+	font-size: 20px;
+}
+
+.form-right h2 {
+	color: #fff;
+}
+
+.compulsory{
+	color: red;
+}
+
+.form-row{
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.container h1{
+	text-align: center;
+	margin-bottom: 50px;
+	color: white;
+}
+
+.submit{
+	margin: auto;
+	margin-top: 20px;
+}
+
+body{
+	/*background-color: #1e90ff*/
+	background-image: url("https://www.lawyersclubindia.com/img/preview/custom/Petiton.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  .form{
+  	margin: 25%;
+  }
+}
+
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .form{
+  	margin: 10%;
+  }
+}
+
+/********** Small devices only **********/
+@media (max-width: 992px){
+  .form{
+  	margin: 5%;
+  }
+}

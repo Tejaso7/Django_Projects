@@ -1,0 +1,35 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Pic</th>
+      <th>FullName</th>
+      <th>Email</th>
+      <th>Speciality</th>
+      <th>City</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% lawyers.forEach(function(lawyer) { %>
+    <tr>
+      <td><%= lawyer._id %></td>
+      <td><img style="border-radius: 50%;" src="<%= lawyer.photoUrl %>" width="100px" height="100px" alt="Ritesh"></td>
+      <td><%= lawyer.fullname %></td>
+      <td><%= lawyer.username %></td>
+      <td>
+        <% lawyer.speciality.forEach(function(item) { %>
+        <p><%= item %></p>
+        <% }) %>
+
+      </td>
+      <td><%= lawyer.city %></td>
+      <td>
+        <a href="#">Update</a> |
+        <a href="#">Delete</a>
+      </td>
+    </tr>
+    <% }) %>
+
+  </tbody>
+</table>

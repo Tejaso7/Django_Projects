@@ -1,0 +1,324 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+.manipulated-text {
+  display: none;
+}
+
+.toggleDashboardOption {
+  display: none;
+}
+
+.toggleSignIn {
+  display: none;
+}
+
+.navbar-dark {
+  background-color: #1e90ff;
+}
+
+.navbar-brand {
+  color: #fff;
+  width: auto;
+}
+
+#img-logo {
+  background: url("../images/ecourt-logo.png") no-repeat;
+  width: 120px;
+  height: 120px;
+}
+
+.navbar-brand a h1 {
+  color: #fff;
+}
+
+.navbar-brand h1,
+.navbar-brand p {
+  margin: 0px 0px 0px 130px;
+}
+
+.navbar-brand p {
+  font-size: 0.8em;
+}
+
+.navbar-brand a.link-text:hover {
+  text-decoration: none;
+}
+
+#navbar a {
+  transition: border-bottom;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+}
+
+#navbar a:hover {
+  border-bottom: 5px solid #2f56b0;
+}
+
+#navbar {
+  margin-left: 20px;
+}
+
+#court-navbar .nav-link {
+  color: #fff;
+  padding: 0px 14px;
+  font-size: 1.3em;
+}
+
+#court-pic-div {
+  position: relative;
+}
+
+#court-pic-div,
+.court-pic img {
+  width: 100%;
+  height: 530px;
+  opacity: 0.9;
+}
+
+/* .card {
+  width: 18rem;
+  height: auto;
+  border-bottom: 2px solid pink;
+} */
+
+.card-1 .card {
+  height: 297px;
+  position: absolute;
+  left: 19.5%;
+  bottom: -150px;
+  box-shadow: 5px 10px 28px #888888;
+}
+
+.card-2 .card {
+  height: 350px;
+  position: absolute;
+  left: 39%;
+  bottom: -180px;
+  z-index: 1;
+  box-shadow: 5px 10px 28px #888888;
+}
+
+.card-3 .card {
+  height: 297px;
+  position: absolute;
+  left: 58.5%;
+  bottom: -150px;
+  box-shadow: 5px 10px 28px #888888;
+}
+
+.card .fas {
+  font-size: 2em;
+  text-align: center;
+  padding: 20px;
+}
+
+.card-title {
+  text-align: center;
+  padding: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.card-text {
+  font-style: 1.1em;
+}
+
+.card-2 .card-text,
+.card-3 .card-text {
+  margin-left: 15px;
+}
+
+.information {
+  margin-top: 300px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.information h1 {
+  font-weight: bold;
+}
+
+.information p {
+  padding: 20px;
+  margin-left: 15px;
+  border-bottom: 1px solid pink;
+}
+
+.information img {
+  width: 100%;
+}
+
+#info-content {
+  padding: 20px;
+}
+
+#info-content span {
+  display: inline;
+  margin-right: 15px;
+  box-shadow: 5px 10px 28px #888888;
+  font-size: 1.3em;
+  padding: 5px;
+}
+
+.inner-content {
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: -30px;
+}
+
+#info-content h4 {
+  /* display: inline-block; */
+  margin-left: 35px;
+}
+
+.small-info {
+  margin-left: 15px;
+  margin-top: -20px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.download-section {
+  margin-top: 50px;
+  background-color: #1e90ff;
+  height: 250px;
+}
+
+.download-section h1 {
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+}
+
+.download-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-button button {
+  margin-right: 20px;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer-icon i {
+  /* padding: 20px; */
+  margin-right: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 1.3em;
+}
+
+.login-text {
+  margin-left: 45%;
+  font-family: cursive;
+}
+
+#registerModal img {
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Large Devices */
+@media (min-width: 1200px) {
+}
+
+/* Medium Devices */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-item {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Small Devices */
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav-item {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 767px) {
+  .nav-item {
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* .navbar-brand {
+    width: 80px;
+  } */
+
+  #img-logo {
+    display: none;
+  }
+
+  .navbar-brand h1,
+  .navbar-brand p {
+    margin: 0px;
+  }
+
+  .court-pic img {
+    height: 250px;
+  }
+
+  .card-1,
+  .card-2,
+  .card-3 {
+    display: none;
+  }
+  .small-screen-card-div {
+    width: 80%;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .col-12 {
+    margin-top: 20px;
+  }
+
+  .information {
+    margin-top: 800px;
+  }
+
+  .information img {
+    height: 200px;
+  }
+
+  .download-section {
+    height: 500px;
+    width: 100%;
+  }
+
+  .download-section button {
+    margin-top: 20px;
+  }
+
+  .login-text {
+    margin-left: 35%;
+    font-family: cursive;
+  }
+
+  #loginModal button {
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+}

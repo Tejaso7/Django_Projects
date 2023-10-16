@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block pagetitle %} Edukate - Home {% endblock pagetitle %}
+{% load static %}
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            {% for job in jobs %}
+            <div class="card shadow-2-strong">
+                <div class="card-header">
+                    {{ job.company_name }}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"  style='font-size:30px;'> <span style='font-size:35px;'>&#128204;</span> {{job.title}}</h5>
+                    <p class="card-text">{{ job.description }} 
+                    </p>
+                    <a href="{{job.link}}" target="_blank" class="btn btn-primary">Apply here!</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  
+</section>
+{% endblock %}

@@ -1,0 +1,52 @@
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar {
+  /* width: 300px; */
+  /*position: fixed;*/
+  overflow-x: hidden;
+  /* height: 100vh; */
+  height: 1000px;
+  color: white;
+  background-color: #1e3947;
+  /*margin-top:70px;
+*/
+}
+.sidebar-nav-header {
+  padding-left: 10%;
+  font-size: 22px;
+  padding-top: 4%;
+  background-color: #111;
+  height: 60px;
+  font-family: Arial;
+}
+
+.sidebar-nav-link {
+  font-size: 18px;
+  padding-left: 20%;
+  margin-top: 12%;
+  /* font-family: verdana; */
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+}
+
+#heading {
+  /* font-family: verdana; */
+  font-family: "Montserrat", sans-serif;
+  font-size: 60px;
+}
+.card-footer {
+  text-align: right;
+}
+.card-deck {
+  margin-top: 60px;
+}
+.samplenav {
+  padding-top: 1%;
+}
+#signout {
+  float: right;
+  display: inline-flex;
+}

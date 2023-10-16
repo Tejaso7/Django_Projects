@@ -1,0 +1,36 @@
+<table class="table table-striped table-warning">
+  <thead>
+    <tr>
+      <th scope="col">FullName</th>
+      <th scope="col">Complaint</th>
+      <th scope="col">Email ID</th>
+      <th scope="col">Mobile Number</th>
+      <th scope="col">Type</th>
+      <th scope="col">Lawyer Name</th>
+      <th scope="col">Lawyer EmailId</th>
+      <th scope="col">Fees</th>
+      <th scope="col">Revised Fees</th>
+	    <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% foundLawyerApprovedCases.forEach(element => { %>
+      <tr>
+        <td><%= element.userId.fullName %> </td>
+        <td><%= element.caseInfo %> </td>
+        <td><%= element.userId.username %> </td>
+        <td><%= element.userId.phoneNo %> </td>
+        <td><%= element.typeOfUser %> </td>
+        <td><%= element.lawyerId.fullname %> </td>
+        <td><%= element.lawyerId.username %> </td>
+        <td><%= element.fees %> </td>
+        <td><%= element.revisedFees %> </td>
+        <% if (element.isUserApproved) { %> 
+          <td>Approved</td>
+        <% } else { %> 
+          <td>Pending</td>
+        <% } %> 
+      </tr>
+    <% }); %> 
+  </tbody>
+</table>

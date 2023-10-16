@@ -1,0 +1,60 @@
+<div class="samplenav">
+  <i class="fa fa-search" aria-hidden="true"></i>
+  <i class="fa fa-bell" aria-hidden="true"></i>
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+  <div id="signout">
+    <i class="fa fa-sign-out" aria-hidden="true" id="signout"></i>&nbsp;<a onclick="$admin.logout();" href="# "
+      style="font-family: verdana;color: black">Logout</a></div>
+</div>
+<div id="heading">
+  <p>Dashboard</p>
+</div>
+<!-- First Card Deck -->
+<div class="card-deck">
+  <div class="card">
+    <div class="card-header">Total Number of Lawyers</div>
+    <div class="card-body">
+      <p class="card-text noOfLawyers"></p>
+    </div>
+    <div class="card-footer"><a href="#" onclick="$admin.viewAllLawyers();">View All</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header"> Total Number of Cases Registered</div>
+    <div class="card-body">
+      <p class="card-text totalNumberOfCasesRegistered"></p>
+    </div>
+    <div class="card-footer"><a href="#" onclick="$admin.registeredCases();">View All</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header">Total Number of Pending Cases</div>
+    <div class="card-body">
+      <p class="card-text noOfCasesRunning"></p>
+    </div>
+    <div class="card-footer"><a href="#" onclick="$admin.pendingCases();">View All</a></div>
+  </div>
+</div>
+<!-- Second Card Deck -->
+<div class="card-deck">
+  <div class="card">
+    <div class="card-header">Total Cases Solved</div>
+    <div class="card-body">
+      <p class="card-text noOfCasesClosed"></p>
+    </div>
+    <div class="card-footer"><a href="#" onclick="$admin.solvedCases();">View All</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header">Number of Users</div>
+    <div class="card-body">
+      <p class="card-text noOfUsers"></p>
+    </div>
+    <div class="card-footer"><a href="#">View All</a></div>
+  </div>
+  <div class="card">
+    <div class="card-header">Number of Cases
+      Registered Today</div>
+    <div class="card-body">
+      <p class="card-text">No of case registred today</p>
+    </div>
+    <div class="card-footer"><a href="#">View All</a></div>
+  </div>
+</div>

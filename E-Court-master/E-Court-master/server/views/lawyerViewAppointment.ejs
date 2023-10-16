@@ -1,0 +1,29 @@
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Email ID</th>
+      <th scope="col">Complaint</th>
+      <th scope="col">Mobile Number</th>
+      <th scope="col">Type</th>
+      <th scope="col">City</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% foundAppointment.forEach(element => { %>
+      <tr>
+        <td><%= element.userId.username %> </td>
+        <td><%= element.caseInfo %> </td>
+        <td><%= element.userId.phoneNo %> </td>
+        <td><%= element.typeOfUser %> </td>
+        <td><%= element.userId.city %> </td>
+        <td>
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+          <button type="button" class="btn btn-success" onclick="$ec.approveAction('<%= element._id %>');">Approve</button>
+          <button type="button" class="btn btn-danger" onclick="$ec.rejectAction('<%= element._id %>');">Reject</button>
+          </div>
+        </td>
+      </tr>
+    <% }); %> 
+  </tbody>
+</table>

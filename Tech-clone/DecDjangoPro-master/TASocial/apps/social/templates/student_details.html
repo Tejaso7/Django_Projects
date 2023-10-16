@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block pagetitle %} Edukate - Home {% endblock pagetitle %}
+{% load static %}
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="text-center">
+    <br>
+    <h1>All Student Details</h1>
+    <div class="me-2">
+        <br> 
+
+        <table class="table table-striped" style="margin: auto; max-width: 85%;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Master ID</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">College Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Year of Passing</th>
+                    <th class="text-center" scope="col">Mobile Number</th>
+                    <th class="text-center" scope="col">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <th scope="row"> {{ forloop.counter }} </th>
+                    <td> {{ i.id }} </td>
+                    <td> {{ i.name_student }} </td>
+                    <td> {{ i.name_college }} </td>
+                    <td> {{ i.department }} </td>
+                    <td class="text-center"> {{ i.year_pass }} </td>
+                    <td class="text-center"> {{ i.mobile }} </td>
+                    <td class="text-center">
+                        <a class="btn btn-warning btn-lg" href="{% url 'edit_student' i.id %}">Edit</a>
+                        <a class="btn btn-danger btn-lg" href="{% url 'delete_student' i.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}

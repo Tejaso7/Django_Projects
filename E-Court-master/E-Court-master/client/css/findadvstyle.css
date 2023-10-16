@@ -1,0 +1,108 @@
+.col-sm-2 {
+  padding-top: 5%;
+  padding-left: 0px;
+}
+.col-sm-7 {
+  padding-top: 4%;
+}
+.col-sm-3 {
+  padding-top: 5%;
+  background-color: #567899;
+}
+
+.applyFilter {
+  width: 13rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .col-sm-2 {
+    text-align: center;
+    margin-left: 25%;
+    margin-top: auto;
+  }
+}
+@media (max-width: 768px) {
+  .col-sm-7 {
+    text-align: center;
+
+    margin-top: auto;
+  }
+}
+
+#filter {
+  color: red;
+  font-size: 20px;
+}
+
+#leftCard {
+  width: 14rem;
+  margin-left: 1%;
+  padding-left: 3%;
+  padding-bottom: 5%;
+  /*margin-top: 5%;*/
+  padding-top: 1%;
+  margin-bottom: 2%;
+  background-color: LightGray;
+}
+
+#City,
+#Experience {
+  font-style: italic;
+  margin-top: 1%;
+}
+
+#citydropdown,
+#expdropdown {
+  width: 13rem;
+  border-radius: 5%;
+  height: 30px;
+}
+
+.input-group-append {
+  margin-top: 2%;
+}
+.rightCard,
+.rightCard,
+.rightCard {
+  margin-right: 1%;
+  margin-top: 2%;
+}
+#headerName {
+  display: inline-block;
+}
+
+#viewprofile {
+  display: inline-block;
+  float: right;
+}
+
+img {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+}
+#innercard,
+#personimage {
+  display: inline-block;
+}
+#innercard {
+  padding-left: 3%;
+  margin-left: 2%;
+  padding-right: 25%;
+  margin-right: 10%;
+}
+#personimage {
+  margin-top: 0;
+  padding-top: 0;
+  margin-top: -90px;
+}
+
+#pagination {
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+.card-title {
+  text-align: center;
+  font-size: 20px;
+}

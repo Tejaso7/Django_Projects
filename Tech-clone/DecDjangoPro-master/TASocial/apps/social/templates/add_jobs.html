@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block pagetitle %} Edukate - Home {% endblock pagetitle %}
+{% load static %}
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Add New Job Opening </h3>
+                        <form action="{% url 'add_jobs' %}" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-11 mb-4">
+
+                                    <div class="form-outline">
+                                        <label >Job Title</label>
+                                        <input type="text" class="form-row" style="width: 100%;"
+                                            name="title" required />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-11 mb-4">
+
+                                    <div class="form-outline">
+                                        <label >Company Name</label>
+                                        <input type="text" class="form-row" style="width: 100%;"
+                                            name="company_name" required />
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-12 mb-4">
+
+
+                                    <label>More on Job Description</label>
+                                    <textarea class="form-control" rows="6" name="description"></textarea>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-8 ">
+
+
+                                    <label>Job Link</label>
+                                    <textarea class="form-control" rows="1" name="link"></textarea>
+
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="mt-4 pt-2 text-center">
+                                        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+        
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </form>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

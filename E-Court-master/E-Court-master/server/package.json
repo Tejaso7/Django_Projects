@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for E-Court",
+  "main": "app.js",
+  "scripts": {
+    "server": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Team 3R",
+  "license": "ISC",
+  "engines": {
+    "node": "12.19.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.23.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-session": "^1.17.1",
+    "generate-password": "^1.5.1",
+    "mongoose": "^5.10.5",
+    "nodemailer": "^6.4.14",
+    "nodemon": "^2.0.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "path": "^0.12.7"
+  }
+}

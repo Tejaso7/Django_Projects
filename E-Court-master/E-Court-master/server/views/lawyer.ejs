@@ -1,0 +1,229 @@
+<head>
+  <link rel="stylesheet" href="./css/findadvstyle.css">
+</head>
+
+<% var specialities = ["criminal", "family", "Business", "womensRights", "General", "Other"] %>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Left Side -->
+    <div class="col-12 col-sm-2">
+      <!-- Card for Left Col -->
+      <div class="card" id="leftCard">
+        <p id="filter">Filter Options</p>
+
+        <!-- CityDropdown -->
+        <label id="City">City:</label>
+        <select id="citydropdown">
+
+          <% if (city != "") { %>
+          <option><%= city %> </option>
+          <% } %>
+
+          <% foundLawyers.forEach(element => { %>
+          <% if (element.city != city) { %>
+          <option id="<%= element.city %> "><%= element.city %> </option>
+          <% } %>
+          <% }) %>
+        </select>
+
+        <!--  Experience -->
+        <label id="Speciality">Speciality:</label>
+        <select id="expdropdown">
+
+          <% if (speciality != "") { %>
+          <option><%= speciality %> </option>
+          <% } %>
+
+          <% specialities.forEach(element => { %>
+          <% if (element != speciality) { %>
+          <option><%= element %> </option>
+          <% } %>
+          <% }) %>
+        </select>
+
+        <button type="submit" class="btn btn-sm btn-primary applyFilter" onclick="$ec.applyFilter();">Apply
+          Filter</button>
+      </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="col-12 col-sm-7">
+      <% if (foundFilteredLawyers !== "" && foundFilteredLawyers.length === 0) { %>
+      <h4 style="text-align: center; color: red;">Lawyer Not Found</h4>
+      <% } else if (foundFilteredLawyers === "") { %>
+      <% foundLawyers.forEach(function (lawyer) { %>
+      <div class="card rightCard" id="">
+        <div class="card-header">
+          <p id="headerName">Advocate <%= lawyer.fullname %></p>&nbsp;<i class="fa fa-check-circle" aria-hidden="true"
+            style="color: blue;"></i>
+          <p id="viewprofile"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;View Profile</p>
+        </div>
+        <div class="card-body">
+          <img src="<%= lawyer.photoUrl %>" alt="ritesh" id="personimage">
+
+          <div class="card" id="innercard">
+            <p><i class="fa fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Supreme Court,High Court</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;<%= lawyer.city %></p>
+            <p><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;Speciality
+
+              <% lawyer.speciality.forEach(item => { %>
+            <p style="display: inline;"><%= item %>, </p>
+            <% }); %>
+            </p>
+            <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<button type="button" class="btn btn-primary"
+                style="background-color: #983454" data-toggle="modal" data-target="#bookAppointmentModal"
+                onclick="$ec.toggleModal('<%= lawyer._id %>');">Book An
+                Appointment</button>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+      <% }) %>
+      <% } else if (foundFilteredLawyers) { %>
+      <% foundFilteredLawyers.forEach(function (lawyer) { %>
+      <div class="card rightCard" id="">
+        <div class="card-header">
+          <p id="headerName">Advocate <%= lawyer.fullname %></p>&nbsp;<i class="fa fa-check-circle" aria-hidden="true"
+            style="color: blue;"></i>
+          <p id="viewprofile"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;View Profile</p>
+        </div>
+        <div class="card-body">
+          <img src="<%= lawyer.photoUrl %>" alt="ritesh" id="personimage">
+
+          <div class="card" id="innercard">
+            <p><i class="fa fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Supreme Court,High Court</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;<%= lawyer.city %></p>
+            <p><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;Speciality
+
+              <% lawyer.speciality.forEach(item => { %>
+            <p style="display: inline;"><%= item %>, </p>
+            <% }); %>
+            </p>
+            <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<button type="button" class="btn btn-primary"
+                style="background-color: #983454" data-toggle="modal" data-target="#bookAppointmentModal"
+                onclick="$ec.toggleModal('<%= lawyer._id %>');">Book An
+                Appointment</button>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+      <% }) %>
+      <% } %>
+
+
+
+
+      <!-- Paging -->
+      <div id="pagination">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Prev</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-3">
+
+      <div class="card" style="width: 20rem;">
+        <div class="card-title">
+          Lawyers
+        </div>
+        <div class="card-body">
+          <a href="#">Family Lawyer</a><br>
+          <a href="#">Divorce Lawyer</a><br>
+          <a href="#">Property Lawyer</a><br>
+          <a href="#">Criminal Lawyer</a><br>
+          <a href="#">Corporate Lawyer</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 20rem;margin-top:5%;">
+        <div class="card-title">
+          More Options
+        </div>
+        <div class="card-body">
+          <a href="#" onclick="$ec.loadAboutPage();">About Us</a><br>
+          <a href="#" onclick="$ec.loadContactPage();">Contact Us</a><br>
+          <a href="#">Terms Of Use</a>
+        </div>
+
+      </div>
+      <div class="card" style="width: 20rem;margin-top:5%;">
+        <div class="card-title">
+          Other Links
+        </div>
+        <div class="card-body">
+          <a href="#">Laws</a><br>
+          <a href="#">Advocates</a><br>
+          <a href="#">Frequently Asked Questions</a>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="bookAppointmentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book an Appointment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="index.html" method="post">
+          <div class="form-group">
+            <label class="parameter">Details of Complaint</label>
+            <textarea type="text" name="complaint" class="form-control caseInfo" id="complaint" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="parameter">Email ID</label>
+            <input type="text" name="email" id="email" class="form-control emailId" required>
+          </div>
+          <div class="form-group">
+            <label class="parameter">Mobile Number</label>
+            <input type="tel" name="mobileNo" id="mobileNo" class="form-control phoneNo" required>
+          </div>
+          <div class="form-group">
+            <label class="parameter">Type</label>
+            <br>
+            <input type="radio" id="appelant" name="type" value="appelant">
+            <label for="male">Appelant</label><br>
+            <input type="radio" id="defendant" name="type" value="defendant">
+            <label for="female">Defendant</label><br>
+          </div>
+          <div class="form-group">
+            <label class="parameter">Have you approached any lawyer previously?</label>
+            <br>
+            <input type="radio" id="yes" name="approached" value="yes">
+            <label for="male">Yes</label><br>
+            <input type="radio" id="no" name="approached" value="no">
+            <label for="female">No</label><br>
+          </div>
+
+          <center><button type="submit" data-dismiss="modal" onclick="$ec.contactLawyer();" name="submit"
+              class="btn btn-primary">Submit</button></center>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

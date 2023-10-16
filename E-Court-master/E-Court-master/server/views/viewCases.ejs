@@ -1,0 +1,29 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Appelant Name</th>
+      <th scope="col">Defendant Name</th>
+      <th scope="col">Complaint</th>
+      <th scope="col">Codes</th>
+      <th scope="col">Status</th>
+      <th scope="col">Last Court of Hearing</th>
+      <th scope="col">Next Court of Hearing</th>
+      <th scope="col">Last Date of Hearing</th>
+      <th scope="col">Next Date of Hearing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% cases.forEach(element => { %>
+      <td><%= element.appelant.fullname %> </td>
+      <td><%= element.defendant.fullname %> </td>
+      <td><%= element.complaint %> </td>
+      <td><%= element.codes %> </td>
+      <td><%= element.status %> </td>
+      <td><%= element.lastCourtOfHearing %> </td>
+      <td><%= element.nextCourtOfHearing %> </td>
+      <td><%= element.lastDateOfHearing %> </td>
+      <td><%= element.nextDateOfHearing %> </td>
+      <% }); %>
+    </tr>
+</table>

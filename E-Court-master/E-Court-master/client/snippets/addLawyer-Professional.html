@@ -1,0 +1,87 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/addLawyerStyle.css">
+</head>
+
+
+<div class="container">
+  <h1>Add Lawyer</h1>
+  <form action="adminPanel.html" method="post">
+    <div class="form my-auto">
+      <h2>Professional Information</h2>
+      <div class="form-row">
+        <div class="col">
+          <label for="degreeCollege">Degree College:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" id="degreeCollege" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="statedegreeCollege">State of Degree College:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <select id="statedegreeCollege" name="state" class="form-control">
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Punjab">Punjab</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="yop">Year of Passing:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="text" id="yop" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="dosp">Date of Starting Practice:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="date" id="dosp" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="speciality">Speciality:</label>
+        </div>
+        <div class="col">
+          <input type="checkbox" id="speciality" value="criminal" name="speciality"> <label>Criminal</label><br>
+          <input type="checkbox" id="speciality" value="family" name="speciality"> <label>Family</label><br>
+          <input type="checkbox" id="speciality" value="womensRights" name="speciality"> <label>Women's
+            Rights</label><br>
+          <input type="checkbox" id="speciality" value="Business" name="speciality"> <label>Business</label><br>
+          <input type="checkbox" id="speciality" value="General" name="speciality"> <label>General</label><br>
+          <input type="checkbox" id="speciality" value="Other" name="speciality"> <label>Other</label><br>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="lawyerPic">Upload Photo of Lawyer:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="file" id="photo" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="degreePic">Upload Photo of Degree:<span class="compulsory">*</span></label>
+        </div>
+        <div class="col">
+          <input type="file" id="certificate" required>
+        </div>
+      </div>
+    </div>
+    <div>
+      <center><button type="submit" onclick="$ec.addLawyerAllInfo();" class="btn btn-success submit">Submit</button>
+      </center>
+    </div>
+  </form>
+</div>

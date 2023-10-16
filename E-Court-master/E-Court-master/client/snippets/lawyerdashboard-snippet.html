@@ -1,0 +1,30 @@
+<head>
+  <link rel="stylesheet" href="./css/lawyerDashboard.css">
+</head>
+
+<div class="row no-gutters" id="lawyerDashboard">
+  <div class="col-12 col-md-3">
+    <div class="sidebar">
+      <div class="sidebar-header pl-5 pb-2 pt-2 mb-5">
+        <p><i class="fas fa-tachometer-alt fa-lg"></i> Dashboard</p>
+      </div>
+      <div class="sidebar-item offset-2">
+        <div class="sidebar-item-link mb-4">
+          <a href="#" onclick="$ec.loadHomePage();"><i class="fas fa-home"></i> Home</a><br>
+        </div>
+        <div class="sidebar-item-link mb-4">
+          <a href="#" onclick="$ec.lawyerCaseStatus();"><i class="fas fa-spinner"></i> Case Status</a><br>
+        </div>
+        <div class="sidebar-item-link mb-4">
+          <a href="#" onclick="$ec.lawyerCaseRequests();"><i class="fas fa-users"></i> Case Requests</a><br>
+        </div>
+        <div class="sidebar-item-link">
+          <a href="#" onclick="$ec.caseApprovedByUsers();"><i class="fas fa-check"></i> Approved Clients Case</a><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-9" id="lawyer-content">
+
+  </div>
+</div>

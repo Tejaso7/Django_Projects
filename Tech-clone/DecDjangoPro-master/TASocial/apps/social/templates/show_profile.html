@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block pagetitle %} Edukate - Home {% endblock pagetitle %}
+{% load static %}
+{% block content %}
+
+{% include 'navbar.html' %}
+
+
+{% if profiles.user_id != user.id %}
+
+<section class="container">
+    <br>
+    <div class="section-title">
+        <h2>Complete Profile</h2>
+    </div>
+    <form action="#" class="php-email-form" method="POST">
+        {% csrf_token %}
+
+        <div class="col-12">
+            <label class="form-label">Please enter your name</label>
+            <input class="form-control bg-light" name="name" placeholder="name" type="text">
+        </div>
+
+        <div class="row mt-3">
+
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <label class="form-label">Please enter your email</label>
+                <input class="form-control bg-light" name="mail_id" placeholder="mail_id" type="email">
+            </div>
+
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <label class="form-label">Please enter your Mobile Number</label>
+                <input class="form-control bg-light" name="mobile_no" placeholder="mobile_no" type="number">
+            </div>
+        </div>
+        <div class="row mt-3">
+
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <label class="form-label">Please enter Name of Organization</label>
+
+                <input class="form-control bg-light" name="organization" placeholder="organization" type="text">
+            </div>
+
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <label class="form-label">Please enter Organization address</label>
+                <input class="form-control bg-light" name="address" placeholder="address" type="text">
+            </div>
+        </div>
+        <hr>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary me-2 " type="Submit">Submit</button>
+        </div>
+
+
+    </form>
+</section>
+{% else %}
+<section class="h-100 gradient-custom-2" style="background-color: #ed88a0;">
+    <div class="container ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-9 col-xl-7">
+                <div class="card">
+                    <div class="rounded-top text-white d-flex flex-row"
+                        style="background-color: #87BDD3; height:100px;">
+
+                        <div class="ms-3">
+                            <h3>Name- {{profiles.name}}</h3>
+                            <p>Organization - {{ profiles.organization }} | Address - {{ profiles.address }}</p>
+                        </div>
+                    </div>
+                    <div class="p-4 text-black" style="background-color: #f8f9fa;">
+
+
+                        <div class="mb-4 ">
+                            <div class="border p-4" style="background-color: #f8f9fa;">
+                                <p class="font-italic mb-1">Mobile Number - {{ profiles.mobile_no }}</p>
+                                <p class="font-italic mb-1">Mail Address - {{profiles.mail_id}}</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-contentz-between align-items-center mb-4">
+                            <p class="lead fw-normal mb-0"></p>
+                            <a class="btn btn-info float-end" href="#"> Home</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endif %}
+{% endblock %}

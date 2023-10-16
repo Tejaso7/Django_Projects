@@ -1,0 +1,31 @@
+.sidebar{
+    background-color: BlueViolet;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.sidebar-header{
+    background-color: #6004cb;
+    color: cornsilk;
+    font-size: 30px;
+    font-family: Verdana;
+}
+.sidebar-item-link a{
+    color: cornsilk;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+}
+
+.sidebar-item-link a:hover{
+    font-size: 22px;
+    color:brown;
+    
+ }

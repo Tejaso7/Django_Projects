@@ -1,0 +1,108 @@
+hr {
+  background-color: black;
+}
+
+.h1class {
+  font-style: italic;
+  font-family: monospace;
+  text-align: center;
+  font-size: 50px;
+}
+div.imgclass {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  height: 120px;
+  border-radius: 50%;
+  width: 150px;
+}
+figcaption {
+  font-family: cursive;
+  font-size: 18px;
+}
+.box1 {
+  width: 300px;
+  margin: 50px;
+  border-radius: 15px;
+  background: #00bfb6;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  margin-left: 20%;
+  /*  font-weight: 900;*/
+  position: relative;
+}
+.sb1:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #00bfb6;
+  border-top: 15px solid #00bfb6;
+  border-bottom: 15px solid transparent;
+  left: -16px;
+  top: 0px;
+}
+
+.box2 {
+  width: 300px;
+  margin: 50px;
+  border-radius: 15px;
+  background: #00bfb6;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  margin-left: 20%;
+  /*  font-weight: 900;*/
+  position: relative;
+}
+.sb2:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #00bfb6;
+  border-top: 15px solid #00bfb6;
+  border-bottom: 15px solid transparent;
+  left: -16px;
+  top: 0px;
+}
+hr.style6 {
+  background-color: #fff;
+  border-top: 2px dotted #8c8b8b;
+}
+.box3 {
+  width: 300px;
+  margin: 50px;
+  border-radius: 15px;
+  background: #00bfb6;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  margin-left: 42%;
+  /*  font-weight: 900;*/
+  position: relative;
+}
+.sb3:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #00bfb6;
+  border-top: 15px solid #00bfb6;
+  border-bottom: 15px solid transparent;
+  left: -16px;
+  top: 0px;
+}
+@media (max-width: 767px) {
+  .box3 {
+    margin-left: 20%;
+  }
+}

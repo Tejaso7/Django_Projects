@@ -1,0 +1,29 @@
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <td>FullName</td>
+      <td>Complaint</td>
+      <td>Type</td>
+      <td>Lawyer EmailId</td>
+      <td>Fees per hearing</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% foundCases.forEach(element => { %>
+      <tr>
+        <td><%= element.userId.fullName %> </td>
+        <td><%= element.caseInfo %> </td>
+        <td><%= element.typeOfUser %> </td>
+        <td><%= element.lawyerId.username %> </td>
+        <td><%= element.revisedFees %> </td>
+        <td>
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-success" onclick="$ec.userApprovedCase('<%= element._id %>');">Approve</button>
+            <button type="button" class="btn btn-danger" onclick="$ec.userRejectCase('<%= element._id %>');">Reject</button>
+          </div>
+        </td>
+      </tr>
+    <% }); %> 
+  </tbody>
+</table>

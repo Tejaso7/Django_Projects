@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrapcdn -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/5130183192.js" crossorigin="anonymous"></script>
+  <!-- Favicon -->
+  <link rel="icon" href="./images/favicon-32x32.png">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" type="text/css" href="./css/dashboard.css">
+  <title>E-Court</title>
+  <script>
+    var url = "http://localhost:3000/client/index.html";
+    if (!sessionStorage.getItem("admin")) {
+      location.replace(url);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container-fluid row no-gutters">
+    <div class="col-sm-3">
+      <div id="sidebar">
+        <!-- Sidebar header -->
+        <div class="sidebar-nav-header">
+          <a href="#" onclick="$admin.loadFrontPage();">
+            <i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Admin Dashboard
+          </a>
+        </div>
+        <!-- Sidebar Items -->
+        <div class="sidebar-nav-item">
+          <div class="sidebar-nav-link">
+            <a href="#" onclick="$admin.verifyLawyer();">
+              <i class="fas fa-user-check"></i>&nbsp;Verify Lawyer
+            </a>
+          </div>
+          <div class="sidebar-nav-link">
+            <a href="#" onclick="$admin.lawyerApprovedCases();">
+              <i class="fas fa-user-check"></i>&nbsp;Lawyer Approved Cases
+            </a>
+          </div>
+          <div class="sidebar-nav-link">
+            <a href="#" onclick="$admin.addCaseStatusAppelant();">
+              <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Case
+              Details
+            </a>
+          </div>
+          <div class="sidebar-nav-link">
+            <a href="#" onclick="$admin.updateCaseStatusAppelant();">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Update Case Details
+            </a>
+          </div>
+          <div class="sidebar-nav-link">
+            <a href="#" onclick="$admin.viewAllLawyers();">
+              <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;View all Lawyers
+            </a>
+          </div>
+          <div class="sidebar-nav-link">
+            <a onclick="$admin.logout();" href="#">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Of Sidebar -->
+    <div id="admin-content" class="col-sm-9">
+
+    </div>
+  </div>
+
+  <footer style="background-color: #1e90ff; height: 100px; margin-top: 10px; padding-top: 12px;">
+    <div class="footer-icon">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fas fa-envelope"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
+    <div class="copyright">
+      <p>Copyright &copy; 2020 by E-Court -- Make In India</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="./js/ajax-utils.js"></script>
+  <script src="./js/adminPanel.js"></script>
+</body>
+
+</html>
